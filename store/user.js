@@ -37,6 +37,6 @@ export const actions = {
       // 调用外部的成功的回调函数
       // 在Promise中可以通过Promise.resolve来调用成功的回调函数
       Promise.resolve();
-    });
+    })
   }
 };
