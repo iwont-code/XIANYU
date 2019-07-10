@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       form: {
-        username: "13800138000",
-        password: "123456"
+        username: "13666666666",
+        password: "123123"
       },
       // 验证表单
       rules: {
@@ -36,29 +36,31 @@ export default {
     };
   },
   methods: {
-      handleSubmit(){
-          // validate 验证 返回布尔值
-          this.$refs.form.validate((valid)=>{
-              if(valid){
-                  // 如果验证通过，调用登录接口
-                //   this.$axios({
-                //       url:"/accounts/login",
-                //       method:"POST",
-                //       data:this.form
-                //   }).then(result=>{
-                //       // 调用store方法把数据传过去
-                //       this.$store.commit('user/setUserInfo',result.data)
-                //       this.$message.success('登录成功')
-                //       this.$router.push('/')
-                //   })
-                this.$store.dispatch("user/login",this.form).then(result=>{  // .then是Promise的回调
-                    this.$message.success('登录成功')
-                    this.$router.push('/')
-                })
-              }
-          })
-      }
-  },
+    handleSubmit() {
+      // validate 验证 返回布尔值
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          // 如果验证通过，调用登录接口
+          //   this.$axios({
+          //       url:"/accounts/login",
+          //       method:"POST",
+          //       data:this.form
+          //   }).then(result=>{
+          //       // 调用store方法把数据传过去
+          //       this.$store.commit('user/setUserInfo',result.data)
+          //       this.$message.success('登录成功')
+          //       this.$router.push('/')
+          //   })
+          this.$store.dispatch("user/login", this.form).then(result => {
+            // .then是Promise的回调
+            const { nickname } = result.data.user;
+            this.$message.success(`欢迎您! ${nickname}`);
+            this.$router.push("/");
+          });
+        }
+      });
+    }
+  }
 };
 </script>
 <style lang="less" scoped>

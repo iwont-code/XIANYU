@@ -12,9 +12,14 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
+    "dgram": "^1.0.1",
+    "dns": "^0.2.2",
     "element-ui": "^2.4.11",
+    "fs": "0.0.1-security",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
+    "moment": "^2.24.0",
+    "net": "^1.0.2",
     "nuxt": "^2.0.0",
     "vuex-persistedstate": "^2.5.4"
   },
