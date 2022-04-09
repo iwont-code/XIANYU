@@ -18,7 +18,7 @@
     "fs": "0.0.1-security",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "net": "^1.0.2",
     "nuxt": "^2.0.0",
     "vuex-persistedstate": "^2.5.4"
